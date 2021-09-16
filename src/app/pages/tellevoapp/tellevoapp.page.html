@@ -47,24 +47,24 @@
   </ion-item>
   <br>
   <div>
-    {{nombreCiudadO}} - {{nombreCiudadD}}
+    <p>Viaje:  {{nombreCiudadO}} - {{nombreCiudadD}}</p>
   </div>
   <br>
   <br>
   <div>
-    Chofer: {{chofer}}
+    <p>Chofer: {{chofer}}</p>
   </div>
   <br>
   <br>
   <br>
   <div>
-    <ion-button (click)="calcViaje()">Calcular Viaje</ion-button>
+    <ion-button class="calcViaje" (click)="calcViaje()">Calcular Viaje</ion-button>
   </div>
   <div>
-    Total: {{p}}
+    <strong>Total: {{p}}</strong>
   </div>
   <div>
-    Por persona: {{r}}
+    <strong>Por persona: {{r}}</strong>
   </div>
 </ion-content>
 <app-footer></app-footer>
