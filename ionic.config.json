@@ -1,0 +1,7 @@
+{
+  "name": "TeLlevoAPP",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

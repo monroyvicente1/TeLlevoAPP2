@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end" (click)="logout()">
+      <ion-icon name="log-out-outline" [routerLink]="['/home']" class="logout"></ion-icon>
+    </ion-buttons>
+    <ion-title>TeLlevoAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <strong>
+    <div class="user">{{username.username}}
+      <div class="car">
+        <div *ngIf="username.car===false">
+          Pasajero
+        </div>
+        <div *ngIf="username.car===true">
+          Conductor
+        </div>
+      </div>
+    </div>
+  </strong>
+  <ion-item class="city">
+    <ion-label>Ciudad Origen</ion-label>
+    <ion-select [(ngModel)]="ciudadO">
+      <ion-select-option *ngFor="let ciudadO of ciudad" [value]="ciudadO">{{ciudadO.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item class="city">
+    <ion-label>Ciudad Destino</ion-label>
+    <ion-select [(ngModel)]="ciudadD">
+      <ion-select-option *ngFor="let ciudadD of ciudad" [value]="ciudadD">{{ciudadD.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item class="cant">
+    <ion-label>Pasajeros</ion-label>
+    <ion-select [(ngModel)]="cantPasa">
+      <ion-select-option *ngFor="let cantPasa of pasajeros">{{cantPasa.cant}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item class="cond">
+    <ion-label>Conductores</ion-label>
+    <ion-select [(ngModel)]="chofer">
+      <ion-select-option *ngFor="let conductor of conductores">{{conductor.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <br>
+  <div>
+    {{nombreCiudadO}} - {{nombreCiudadD}}
+  </div>
+  <br>
+  <br>
+  <div>
+    Chofer: {{chofer}}
+  </div>
+  <br>
+  <br>
+  <br>
+  <div>
+    <ion-button (click)="calcViaje()">Calcular Viaje</ion-button>
+  </div>
+  <div>
+    Total: {{p}}
+  </div>
+  <div>
+    Por persona: {{r}}
+  </div>
+</ion-content>
+<app-footer></app-footer>

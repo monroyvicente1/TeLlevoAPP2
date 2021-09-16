@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-icon name="arrow-back" class="arrow-back" [routerLink]="['/home']"></ion-icon>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="animate__animated animate__backInLeft">
+  <ion-card>
+    
+    <ion-card-content>
+      <form [formGroup]="formuRegister" (keyup.enter)="guardar()" >
+        <ion-item>
+          <ion-label position="floating">Nombre de Usuario</ion-label>
+          <ion-input formControlName="username" [(ngModel)]="usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirmar contraseña</ion-label>
+          <ion-input formControlName="confirmPassword" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input formControlName="mail" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>¿Tienes Carro?</ion-label>
+          <ion-checkbox formControlName="car"></ion-checkbox>
+        </ion-item>
+        
+        <br>
+        <ion-button class="register" (click)="save()">
+          Registrarse
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+<app-footer></app-footer>
