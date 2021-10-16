@@ -14,5 +14,5 @@ ionic serve --lab
 
 #### Desarrolladores
 ````
-Nadjen - Mooz
+Nadjen - Mooz 
 ````
