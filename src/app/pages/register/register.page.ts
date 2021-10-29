@@ -31,7 +31,7 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {
   }
-/* Guardar Datos de Registro LOCALSTORAGE */
+  /* Guardar Datos de Registro LOCALSTORAGE */
   async save() {
     let f = this.formuRegister.value;
 
@@ -42,7 +42,7 @@ export class RegisterPage implements OnInit {
       mail: f.mail,
       car: f.car
     }
-/* Campos no Completados */    
+    /* Campos no Completados */
     if (this.formuRegister.invalid) {
       return await Swal.fire({
         icon: 'error',
@@ -51,9 +51,9 @@ export class RegisterPage implements OnInit {
         showConfirmButton: false,
         timer: 1500
       })
-    } 
-/* Contraseñas Coinciden */  
-  
+    }
+    /* Contraseñas Coinciden */
+
     if (f.password === f.confirmPassword) {
       localStorage.setItem('data', JSON.stringify(user));
       let userOn = JSON.parse(localStorage.getItem('data'));
@@ -64,12 +64,12 @@ export class RegisterPage implements OnInit {
         showConfirmButton: false,
         timer: 1500
       })
-      let navigationExtras: NavigationExtras={
-        state:{ usuario : this.usuario }
+      let navigationExtras: NavigationExtras = {
+        state: { usuario: this.usuario }
       }
-      return this.router.navigate(['/tellevoapp'],navigationExtras)
-/*Contraseñas no Coinciden*/
-    }else{
+      return this.router.navigate(['/tellevoapp'], navigationExtras)
+      /*Contraseñas no Coinciden*/
+    } else {
       return await Swal.fire({
         icon: 'error',
         title: 'Error',
@@ -79,7 +79,7 @@ export class RegisterPage implements OnInit {
       })
     }
   }
-    
 
-    
+
+
 }
