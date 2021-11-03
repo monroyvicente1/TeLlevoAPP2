@@ -9,6 +9,8 @@ import { TellevoappPageRoutingModule } from './tellevoapp-routing.module';
 import { TellevoappPage } from './tellevoapp.page';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { GeocoderComponent } from 'src/app/components/geocoder/geocoder.component';
+
 
 
 @NgModule({
@@ -16,12 +18,13 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    TellevoappPageRoutingModule
+    TellevoappPageRoutingModule,
+    
   ],
   declarations: [TellevoappPage,
     HeaderComponent,
     FooterComponent,
-
+    GeocoderComponent
   ]
 })
 export class TellevoappPageModule { }

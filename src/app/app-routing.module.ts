@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,11 @@ const routes: Routes = [
     path: 'tellevoapp',
     loadChildren: () => import('./pages/tellevoapp/tellevoapp.module').then( m => m.TellevoappPageModule)
   },
+  {
+    path: '**',
+    component: PagenotfoundComponent
+  },
+
 ];
 
 @NgModule({
