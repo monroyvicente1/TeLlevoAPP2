@@ -39,7 +39,7 @@ export class MapboxService {
         const geocoder = new MapboxGeocoder({
           accessToken: environment.mapboxKey,
           mapboxgl,
-          placeholder: 'Ingresar Dirección',
+          placeholder: 'Ingresar Ruta',
           
         });
         const marker = new mapboxgl.Marker({

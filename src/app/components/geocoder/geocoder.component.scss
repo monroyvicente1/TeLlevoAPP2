@@ -43,16 +43,17 @@
   .geocoder {
     margin-bottom: .5rem;
   }
-  
+ 
   .geocoder, .mapboxgl-ctrl {
-    width: 100%;
+    width: 60%;
     max-width: 100%;
     border-radius: 0;
     background-color: white;
+    
   }
   
   .active-way {
-    border: solid 2px #09c509;
+    border: solid 2px blue;
     box-shadow: 0 0 10px #09c5094a;
   }
   
