@@ -3,4 +3,19 @@
     justify-content: center;
     align-items: center;
     margin-top: auto;
+    
 }
+
+ion-content.background{
+    --background: #0267b1;
+    
+  }
+ion-toolbar.background{
+      --background:#0267b1;
+  }
+ion-button.background{
+  --backgorund:#0267b1;
+}
+
+
+//   animate__animated animate__backInLeft

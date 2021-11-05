@@ -53,6 +53,7 @@ export class RegisterPage implements OnInit {
       })
     }
     /* Contraseñas Coinciden */
+    /*verificar el inicio de sesion en el localstorage -> rout... en un servicio, approutingmodules, buscar canactivate*/ 
 
     if (f.password === f.confirmPassword) {
       localStorage.setItem('data', JSON.stringify(user));
