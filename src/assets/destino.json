@@ -1,0 +1,14 @@
+{
+  "destinos": [
+    {
+      "id": 1,
+      "name": "Duoc Valparaiso",
+      "precio": 3000
+    },
+    {
+      "id": 2,
+      "name": "Duoc Viña del mar",
+      "precio": 6000
+    }
+  ]
+}

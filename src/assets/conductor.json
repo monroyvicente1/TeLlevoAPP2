@@ -1,0 +1,40 @@
+{
+  "conductores": [
+    {
+      "id": 1,
+      "name": "Marcelo Rodriguez",
+      "disp": "Si esta Disponible",
+      "destino": "Valparaiso"
+    },
+    {
+      "id": 2,
+      "name": "Bastian Leyton",
+      "disp": "No esta Disponible",
+      "destino": "Valparaiso"
+    },
+    {
+      "id": 3,
+      "name": "Michael Schumagger",
+      "disp": "Si esta Disponible",
+      "destino": "Valparaiso"
+    },
+    {
+      "id": 4,
+      "name": "Camilo Bastias",
+      "disp": "Si esta Disponible",
+      "destino": "Viña"
+    },
+    {
+      "id": 5,
+      "name": "Rogelio Rojas",
+      "disp": "No esta Disponible",
+      "destino": "Viña"
+    },
+    {
+      "id": 6,
+      "name": "Damian Martin",
+      "disp": "No esta Disponible",
+      "destino": "Viña"
+    }
+  ]
+}

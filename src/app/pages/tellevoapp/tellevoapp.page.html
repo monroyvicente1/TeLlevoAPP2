@@ -22,14 +22,14 @@
   </strong>
   <ion-item class="city">
     <ion-label>Ciudad Origen</ion-label>
-    <ion-select [(ngModel)]="ciudadO">
-      <ion-select-option *ngFor="let ciudadO of ciudad" [value]="ciudadO">{{ciudadO.name}}</ion-select-option>
+    <ion-select [(ngModel)]="origen" (ionChange)="getConductor()">
+      <ion-select-option *ngFor="let ciudad of ciudades" [value]="ciudad.name">{{ciudad.name}}</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-item class="city">
     <ion-label>Ciudad Destino</ion-label>
-    <ion-select [(ngModel)]="ciudadD">
-      <ion-select-option *ngFor="let ciudadD of ciudad" [value]="ciudadD">{{ciudadD.name}}</ion-select-option>
+    <ion-select [(ngModel)]="destino">
+      <ion-select-option *ngFor="let destino of destinos" [value]="destino.name">{{destino.name}}</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-item class="cant">
@@ -42,9 +42,10 @@
   <ion-item class="cond">
     <ion-label>Conductores</ion-label>
     <ion-select [(ngModel)]="chofer">
-      <ion-select-option *ngFor="let conductor of conductores">{{conductor.name}}</ion-select-option>
+      <ion-select-option *ngFor="let conductor of conductores" [value]="conductor.name">{{conductor.name}}</ion-select-option>
     </ion-select>
   </ion-item>
+  {{origen}}
   <br>
   <div>
     <p>Viaje:  {{nombreCiudadO}} - {{nombreCiudadD}}</p>

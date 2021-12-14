@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ApirestService } from 'src/app/services/apirest.service';
 
 
 
@@ -10,20 +11,22 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 
 export class TellevoappPage implements OnInit {
+  conductores: any[] = [];
+  destinos: any[] = [];
+  ciudades: any[] = [];
   p: number;
   r: number;
   usuario: any;
   destino: String;
   nombreCiudadO: string;
   nombreCiudadD: string;
-  ciudadO: any;
+  origen: any;
   ciudadD: any;
   cantPasa: number;
   username = [];
-  ciudad = [{ id: 1, name: "Valparaiso", precio: 3000 }, { id: 2, name: "Viña del Mar", precio: 6000 }, { id: 3, name: "Quillota", precio: 9000 }, { id: 4, name: "Quilpue", precio: 11000 }];
   pasajeros = [{ id: 1, cant: 1 }, { id: 2, cant: 2 }, { id: 3, cant: 3 }, { id: 4, cant: 4 }];
-  conductores = [{ id: 1, name: "Marcelo Rodriguez" }, { id: 2, name: "Bastian Leyton" }, { id: 3, name: "Michael Schumagger" }]
-  constructor(public router: Router, public activatedRoute: ActivatedRoute) {
+  
+  constructor(public router: Router, public activatedRoute: ActivatedRoute, private apirestService: ApirestService) {
     this.username = JSON.parse(localStorage.getItem('data'));
     this.activatedRoute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
@@ -34,9 +37,8 @@ export class TellevoappPage implements OnInit {
 
   ngOnInit(): void {
    
-
-    
-
+   this.apirestService.getCiudades().subscribe(ciudad => this.ciudades = ciudad.ciudades)
+   this.apirestService.getDestinos().subscribe(destino => this.destinos = destino.destinos)
   }
   
   
@@ -52,9 +54,17 @@ export class TellevoappPage implements OnInit {
     localStorage.setItem('data', JSON.stringify(user)); */
     return this.router.navigate(['/home'])
   }
+  getConductor(){
+    this.apirestService.getConductores().subscribe(conductor => {
+      let conductoresFiltro = conductor.conductores
+      this.conductores = conductoresFiltro.filter(conductorFilter => {
+        return conductorFilter.destino === this.origen
+      })
+    })
+  }
   calcViaje() {
     this.nombreCiudadD = this.ciudadD.name
-    this.nombreCiudadO = this.ciudadO.name
+    this.nombreCiudadO = this.origen.name
     this.r = this.ciudadD.precio / this.cantPasa
     this.p = this.ciudadD.precio
   }
